@@ -1,0 +1,10 @@
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\bin\Debug\GrDiK.exe.config
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\bin\Debug\GrDiK.exe
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\bin\Debug\GrDiK.pdb
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\obj\Debug\GrDiK.csproj.AssemblyReference.cache
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\obj\Debug\GrDiK.Form1.resources
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\obj\Debug\GrDiK.Properties.Resources.resources
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\obj\Debug\GrDiK.csproj.GenerateResource.cache
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\obj\Debug\GrDiK.csproj.CoreCompileInputs.cache
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\obj\Debug\GrDiK.exe
+D:\Учёба\ГрДиК\Лабы\GrDiK\GrDiK\obj\Debug\GrDiK.pdb
