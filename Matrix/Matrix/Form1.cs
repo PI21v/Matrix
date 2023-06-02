@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -11,8 +13,13 @@ using System.Windows.Forms;
 
 namespace Matrix
 {
+    
     public partial class Form1 : Form
     {
+
+        string user_name = "test";
+        string history; 
+
         public Form1()
         {
             InitializeComponent();
@@ -177,10 +184,11 @@ namespace Matrix
                 dgv2_1.ColumnCount = Column;
                 dgv2_1.RowCount = Row;
                 dgv2_2.ColumnCount = 1;
-                dgv2_2.RowCount = Row;
+                dgv2_2.RowCount = Column;
                 dgv2_3.ColumnCount = 1;
                 dgv2_3.RowCount = Row;
                 int rowHeight = dgv2_1.Size.Height / dgv2_1.RowCount;
+                int rowHeight1 = dgv2_2.Size.Height / dgv2_2.RowCount;
                 dgv2_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgv2_2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dgv2_3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -190,9 +198,14 @@ namespace Matrix
                 for (int i = 0; i < dgv2_1.RowCount; i++)
                 {
                     dgv2_1.Rows[i].Height = rowHeight - 1;
-                    dgv2_2.Rows[i].Height = rowHeight - 1;
                     dgv2_3.Rows[i].Height = rowHeight - 1;
                 }
+                for (int i = 0; i < dgv2_2.RowCount; i++)
+                {
+                    dgv2_2.Rows[i].Height = rowHeight1 - 1;
+                   
+                }
+                
             }
             catch (Exception ex)
             {
@@ -217,7 +230,7 @@ namespace Matrix
                 {
                     for (int j = 0; j < dgv2_1.ColumnCount; j++)
                     {
-                        dgv2_3[0, j].Value = Int32.Parse(dgv2_3[0, j].Value.ToString()) + Int32.Parse(dgv2_1[i, j].Value.ToString()) * Int32.Parse(dgv2_2[0, i].Value.ToString());
+                        dgv2_3[0, i].Value = Int32.Parse(dgv2_3[0, i].Value.ToString()) + Int32.Parse(dgv2_1[j, i].Value.ToString()) * Int32.Parse(dgv2_2[0, j].Value.ToString());
                     }
                 }
             }
@@ -607,7 +620,7 @@ namespace Matrix
                     {
                         for (int j = 0; j < dgv6_3.ColumnCount; j++)
                         {
-                            dgv6_3[j, i].Value = obr_matr[i, j].ToString("#");
+                            dgv6_3[j, i].Value = Math.Round(obr_matr[i, j]);
                         }
                     }
                 }
@@ -712,6 +725,439 @@ namespace Matrix
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (panel1.Size == panel1.MinimumSize)
+            {
+                panel1.Size = panel1.MaximumSize;
+                panel1.BorderStyle = BorderStyle.FixedSingle;
+            }
+            else
+            {
+                panel1.Size = panel1.MinimumSize;
+                panel1.BorderStyle = BorderStyle.None;
+            }
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            panel1.Size = panel1.MinimumSize;
+            panel1.BorderStyle = BorderStyle.None;
+            string data;
+            try
+            {
+                int selectedIndex = tabControl1.SelectedIndex;
+                /*history = "history\\" + user_name + ".txt";
+                bool m2 = false;
+                bool m3 = false;
+                bool value = false;
+                bool result_value = false;*/
+                
+                List<DataGridView> matrices = new List<DataGridView>();
+                string[] matrixSizes;
+                switch (selectedIndex)
+                {
+                    case 0:
+
+                        matrixSizes = new string[] { size1_1.Text + "x" + size1_2.Text, size1_1.Text + "x" + size1_2.Text, size1_1.Text + "x" + size1_2.Text };
+                        matrices.Add(dgv1_1);
+                        matrices.Add(dgv1_2);
+                        matrices.Add(dgv1_3);
+                        data = $"Панель: {selectedIndex}\n";
+                        data += $"Матрица1: {matrixSizes[0]}\n";
+                        data += $"Матрица2: {matrixSizes[1]}\n";
+                        data += $"Матрица3: {matrixSizes[2]}\n";
+                        //data += $"Результат_ответ: {answerResult}\n";
+
+                        for (int i = 0; i < matrices.Count; i++)
+                        {
+                            DataGridView matrix = matrices[i];
+                            data += $"Результат_матрица{i + 1}:\n";
+                            for (int row = 0; row < matrix.RowCount; row++)
+                            {
+                                for (int col = 0; col < matrix.ColumnCount; col++)
+                                {
+                                    data += matrix[col, row].Value.ToString();
+                                    if (col < matrix.ColumnCount - 1)
+                                        data += "|";
+                                }
+                                data += "\n";
+                            }
+                        }
+                        break;
+
+                    case 1:
+
+                        matrixSizes = new string[] { size2_1.Text + "x" + size2_2.Text, "1x" + size2_1.Text, "1x" + size2_2.Text };
+                        matrices.Add(dgv2_1);
+                        matrices.Add(dgv2_2);
+                        matrices.Add(dgv2_3);
+
+                        data = $"Панель: {selectedIndex}\n";
+                        data += $"Матрица1: {matrixSizes[0]}\n";
+                        data += $"Матрица2: {matrixSizes[1]}\n";
+                        data += $"Матрица3: {matrixSizes[2]}\n";
+
+                        for (int i = 0; i < matrices.Count; i++)
+                        {
+                            DataGridView matrix = matrices[i];
+                            data += $"Результат_матрица{i + 1}:\n";
+                            for (int row = 0; row < matrix.RowCount; row++)
+                            {
+                                for (int col = 0; col < matrix.ColumnCount; col++)
+                                {
+                                    data += matrix[col, row].Value.ToString();
+                                    if (col < matrix.ColumnCount - 1)
+                                        data += "|";
+                                }
+                                data += "\n";
+                            }
+                        }
+                        break;
+
+                    case 2:
+
+                        matrixSizes = new string[] { size3_1.Text + "x" + size3_2.Text, size3_2.Text + "x" + size3_1.Text };
+                        matrices.Add(dgv3_1);
+                        matrices.Add(dgv3_3);
+
+                        data = $"Панель: {selectedIndex}\n";
+                        data += $"Матрица1: {matrixSizes[0]}\n";
+                        data += $"Матрица3: {matrixSizes[1]}\n";
+
+                        for (int i = 0; i < matrices.Count; i++)
+                        {
+                            DataGridView matrix = matrices[i];
+                            data += $"Результат_матрица{i + 1}:\n";
+                            for (int row = 0; row < matrix.RowCount; row++)
+                            {
+                                for (int col = 0; col < matrix.ColumnCount; col++)
+                                {
+                                    data += matrix[col, row].Value.ToString();
+                                    if (col < matrix.ColumnCount - 1)
+                                        data += "|";
+                                }
+                                data += "\n";
+                            }
+                        }
+                        break;
+
+                    case 3:
+
+                        matrixSizes = new string[] { size4_1.Text + "x" + size4_2.Text };
+                        matrices.Add(dgv4_1);
+
+                        data = $"Панель: {selectedIndex}\n";
+                        data += $"Матрица1: {matrixSizes[0]}\n";
+                        data += $"Результат_ответ: {label16.Text}\n";
+                        break;
+
+                    case 4:
+
+                        matrixSizes = new string[] { size5_1.Text + "x" + size5_2.Text, size5_1.Text + "x" + size5_2.Text };
+                        matrices.Add(dgv5_1);
+                        matrices.Add(dgv5_3);
+
+                        data = $"Панель: {selectedIndex}\n";
+                        data += $"Матрица1: {matrixSizes[0]}\n";
+                        data += $"Матрица3: {matrixSizes[1]}\n";
+
+                        for (int i = 0; i < matrices.Count; i++)
+                        {
+                            DataGridView matrix = matrices[i];
+                            data += $"Результат_матрица{i + 1}:\n";
+                            for (int row = 0; row < matrix.RowCount; row++)
+                            {
+                                for (int col = 0; col < matrix.ColumnCount; col++)
+                                {
+                                    data += matrix[col, row].Value.ToString();
+                                    if (col < matrix.ColumnCount - 1)
+                                        data += "|";
+                                }
+                                data += "\n";
+                            }
+                        }
+                        break;
+
+                    case 5:
+
+                        matrixSizes = new string[] { size6_1.Text + "x" + size6_2.Text, size6_1.Text + "x" + size6_2.Text };
+                        matrices.Add(dgv6_1);
+                        matrices.Add(dgv6_3);
+
+                        data = $"Панель: {selectedIndex}\n";
+                        data += $"Матрица1: {matrixSizes[0]}\n";
+                        data += $"Матрица3: {matrixSizes[1]}\n";
+
+                        for (int i = 0; i < matrices.Count; i++)
+                        {
+                            DataGridView matrix = matrices[i];
+                            data += $"Результат_матрица{i + 1}:\n";
+                            for (int row = 0; row < matrix.RowCount; row++)
+                            {
+                                for (int col = 0; col < matrix.ColumnCount; col++)
+                                {
+                                    data += matrix[col, row].Value.ToString();
+                                    if (col < matrix.ColumnCount - 1)
+                                        data += "|";
+                                }
+                                data += "\n";
+                            }
+                        }
+                        break;
+
+                    case 6:
+
+                        matrixSizes = new string[] { size7_1.Text + "x" + size7_2.Text, size7_1.Text + "x" + size7_2.Text };
+                        matrices.Add(dgv7_1);
+                        matrices.Add(dgv7_3);
+
+                        data = $"Панель: {selectedIndex}\n";
+                        data += $"Матрица1: {matrixSizes[0]}\n";
+                        data += $"Матрица3: {matrixSizes[1]}\n";
+                        data += $"Переменная: {size7_3.Text}\n";
+                        for (int i = 0; i < matrices.Count; i++)
+                        {
+                            DataGridView matrix = matrices[i];
+                            data += $"Результат_матрица{i + 1}:\n";
+                            for (int row = 0; row < matrix.RowCount; row++)
+                            {
+                                for (int col = 0; col < matrix.ColumnCount; col++)
+                                {
+                                    data += matrix[col, row].Value.ToString();
+                                    if (col < matrix.ColumnCount - 1)
+                                        data += "|";
+                                }
+                                data += "\n";
+                            }
+                        }
+                        break;
+
+                    case 7:
+
+                        matrixSizes = new string[] { size8_1.Text + "x" + size8_2.Text };
+                        matrices.Add(dgv8_1);
+
+                        data = $"Панель: {selectedIndex}\n";
+                        data += $"Матрица1: {matrixSizes[0]}\n";
+                        data += $"Результат_ответ: {label22.Text}\n";
+                        break;
+
+                    default:
+                        return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка при считывании данных: " + ex.Message);
+                return;
+            }
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
+            saveFileDialog.DefaultExt = "txt";
+            saveFileDialog.FileName = "output.txt";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+                try
+                {
+                    File.WriteAllText(filePath, data);
+                    MessageBox.Show("Данные успешно записаны в файл.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Произошла ошибка при записи данных в файл: " + ex.Message);
+                    return;
+                }
+            }
+            
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            panel1.Size = panel1.MinimumSize;
+            panel1.BorderStyle = BorderStyle.None;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                string fileContent = File.ReadAllText(filePath);
+                string[] lines = fileContent.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                int selectedIndex = 0;
+                string[] matrixSizes = new string[3];
+                int variableValue = 0;
+                int answerResult = 0;
+                int currentMatrixIndex = 0;
+                int[] size = new int[2];
+                int temp = 0;
+                try
+                { 
+                    dgv1_1.Rows.Clear();
+                    dgv1_2.Rows.Clear();
+                    dgv1_3.Rows.Clear();
+
+
+                    foreach (string line in lines)
+                    {
+                        if (line.StartsWith("Панель:"))
+                        {
+                            selectedIndex = int.Parse(line.Substring(line.IndexOf(":") + 1).Trim());
+                        }
+                        else if (line.StartsWith("Матрица"))
+                        {
+                            int matrixIndex = int.Parse(line.Substring(line.IndexOf("ц") + 2, 1));
+                            matrixSizes[matrixIndex - 1] = line.Substring(line.IndexOf(":") + 1).Trim();
+                        }
+                        else if (line.StartsWith("Переменная:"))
+                        {
+                            variableValue = int.Parse(line.Substring(line.IndexOf(":") + 1).Trim());
+                        }
+                        else if (line.StartsWith("Результат_ответ:"))
+                        {
+                            answerResult = int.Parse(line.Substring(line.IndexOf(":") + 1).Trim());
+                        }
+                        else if (line.StartsWith("Результат_матрица"))
+                        {
+                            
+                            currentMatrixIndex = int.Parse(line.Substring(line.IndexOf("ц") + 2, 1));
+                            size = matrixSizes[currentMatrixIndex - 1].Split('x').Select(x => int.Parse(x)).ToArray();
+                            if (currentMatrixIndex == 1)
+                            {
+                                dgv1_1.ColumnCount = size[0];
+                                dgv1_1.RowCount = size[1];
+                            }
+                                
+                            if (currentMatrixIndex == 2)
+                            {
+                                dgv1_2.ColumnCount = size[0];
+                                dgv1_2.RowCount = size[1];
+                            }
+                                
+                            if (currentMatrixIndex == 3)
+                            {
+                                dgv1_3.ColumnCount = size[0];
+                                dgv1_3.RowCount = size[1];
+                            }
+               
+                        }
+                        else if (!string.IsNullOrWhiteSpace(line))
+                        {
+                            string[] matrixValues = line.Split('|');             
+                            if (currentMatrixIndex == 1)
+                            {
+                                for (int i = 0; i < matrixValues.Length; i++)
+                                {
+                                    dgv1_1[i, temp].Value = matrixValues[i];
+                                }
+                            }
+                            if (currentMatrixIndex == 2)
+                            {
+                                for (int i = 0; i < matrixValues.Length; i++)
+                                {
+                                    dgv1_2[i, temp - dgv1_1.RowCount].Value = matrixValues[i];
+                                }
+                            }
+                            if (currentMatrixIndex == 3)
+                            {
+                                for (int i = 0; i < matrixValues.Length; i++)
+                                {
+                                    dgv1_3[i, temp - dgv1_1.RowCount - dgv1_2.RowCount].Value = matrixValues[i];
+                                }    
+                            }
+                            temp++;
+                        }
+                    }
+
+                    //switch (selectedIndex) { }
+
+                    size1_1.Text = dgv1_1.ColumnCount.ToString();
+                    size1_2.Text = dgv1_1.RowCount.ToString();
+                    int rowHeight = dgv1_1.Size.Height / dgv1_1.RowCount;
+                    dgv1_1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgv1_2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgv1_3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dgv1_1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                    dgv1_2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                    dgv1_3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                    for (int i = 0; i < dgv1_1.RowCount; i++)
+                    {
+                        dgv1_1.Rows[i].Height = rowHeight - 1;
+                        dgv1_2.Rows[i].Height = rowHeight - 1;
+                        dgv1_3.Rows[i].Height = rowHeight - 1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    dgv1_1.Rows.Clear();
+                    dgv1_2.Rows.Clear();
+                    dgv1_3.Rows.Clear();
+                    size1_1.Text = "";
+                    size1_2.Text = "";
+                    MessageBox.Show("Произошла ошибка при чтении файла: " + ex.Message);
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (panel3.Size == panel3.MinimumSize)
+            {
+                panel3.Size = panel3.MaximumSize;
+                panel3.BorderStyle = BorderStyle.FixedSingle;
+            }
+
+            else
+            {
+                panel3.Size = panel3.MinimumSize;
+                panel3.BorderStyle = BorderStyle.None;
+            }
+        }
+
+        private void journalButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        const int WM_PARENTNOTIFY = 0x210;
+        const int WM_LBUTTONDOWN = 0x201;
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == WM_LBUTTONDOWN || (m.Msg == WM_PARENTNOTIFY &&
+                (int)m.WParam == WM_LBUTTONDOWN))
+            {
+                if (!panel1.ClientRectangle.Contains(panel1.PointToClient(Cursor.Position)) &&
+                    (!button1.ClientRectangle.Contains(button1.PointToClient(Cursor.Position))))
+                {
+                    panel1.Size = panel1.MinimumSize;
+                    panel1.BorderStyle = BorderStyle.None;
+                }
+                    
+                if (!panel3.ClientRectangle.Contains(panel3.PointToClient(Cursor.Position)) &&
+                    (!button3.ClientRectangle.Contains(button3.PointToClient(Cursor.Position))))
+                {
+                    panel3.Size = panel3.MinimumSize;
+                    panel3.BorderStyle = BorderStyle.None;
+                }
+                    
+            }
+
+            base.WndProc(ref m);
         }
     }
 }

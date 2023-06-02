@@ -42,9 +42,9 @@ namespace Matrix
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -113,16 +113,7 @@ namespace Matrix
             this.dgv6_3 = new System.Windows.Forms.DataGridView();
             this.dgv6_1 = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.label22 = new System.Windows.Forms.Label();
-            this.opredelitelButton = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.sizeButton8 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.size8_2 = new System.Windows.Forms.TextBox();
-            this.size8_1 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.dgv8_1 = new System.Windows.Forms.DataGridView();
+            this.size7_3 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.sizeButton7 = new System.Windows.Forms.Button();
@@ -133,7 +124,26 @@ namespace Matrix
             this.label29 = new System.Windows.Forms.Label();
             this.dgv7_3 = new System.Windows.Forms.DataGridView();
             this.dgv7_1 = new System.Windows.Forms.DataGridView();
-            this.size7_3 = new System.Windows.Forms.TextBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.opredelitelButton = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.sizeButton8 = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.size8_2 = new System.Windows.Forms.TextBox();
+            this.size8_1 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dgv8_1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.loadButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.journalButton = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1_3)).BeginInit();
@@ -155,10 +165,13 @@ namespace Matrix
             ((System.ComponentModel.ISupportInitialize)(this.dgv6_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv6_1)).BeginInit();
             this.tabPage7.SuspendLayout();
-            this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv8_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv7_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv7_1)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv8_1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1164,133 +1177,13 @@ namespace Matrix
             this.tabPage7.Text = "Скалярное умножение ";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // tabPage8
+            // size7_3
             // 
-            this.tabPage8.Controls.Add(this.label22);
-            this.tabPage8.Controls.Add(this.opredelitelButton);
-            this.tabPage8.Controls.Add(this.label19);
-            this.tabPage8.Controls.Add(this.sizeButton8);
-            this.tabPage8.Controls.Add(this.label20);
-            this.tabPage8.Controls.Add(this.size8_2);
-            this.tabPage8.Controls.Add(this.size8_1);
-            this.tabPage8.Controls.Add(this.label21);
-            this.tabPage8.Controls.Add(this.dgv8_1);
-            this.tabPage8.Location = new System.Drawing.Point(4, 25);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1316, 573);
-            this.tabPage8.TabIndex = 8;
-            this.tabPage8.Text = "Определитель";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(497, 355);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(31, 29);
-            this.label22.TabIndex = 43;
-            this.label22.Text = "...";
-            // 
-            // opredelitelButton
-            // 
-            this.opredelitelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.opredelitelButton.Location = new System.Drawing.Point(90, 153);
-            this.opredelitelButton.Name = "opredelitelButton";
-            this.opredelitelButton.Size = new System.Drawing.Size(287, 43);
-            this.opredelitelButton.TabIndex = 42;
-            this.opredelitelButton.Text = "Вычислить определитель";
-            this.opredelitelButton.UseVisualStyleBackColor = true;
-            this.opredelitelButton.Click += new System.EventHandler(this.opredelitelButton_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(435, 347);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 44);
-            this.label19.TabIndex = 41;
-            this.label19.Text = "=";
-            // 
-            // sizeButton8
-            // 
-            this.sizeButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.sizeButton8.Location = new System.Drawing.Point(598, 38);
-            this.sizeButton8.Name = "sizeButton8";
-            this.sizeButton8.Size = new System.Drawing.Size(300, 41);
-            this.sizeButton8.TabIndex = 40;
-            this.sizeButton8.Text = "Задать размер";
-            this.sizeButton8.UseVisualStyleBackColor = true;
-            this.sizeButton8.Click += new System.EventHandler(this.sizeButton8_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(470, 44);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(26, 25);
-            this.label20.TabIndex = 38;
-            this.label20.Text = "X";
-            // 
-            // size8_2
-            // 
-            this.size8_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.size8_2.Location = new System.Drawing.Point(502, 41);
-            this.size8_2.Name = "size8_2";
-            this.size8_2.ReadOnly = true;
-            this.size8_2.Size = new System.Drawing.Size(51, 30);
-            this.size8_2.TabIndex = 37;
-            // 
-            // size8_1
-            // 
-            this.size8_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.size8_1.Location = new System.Drawing.Point(413, 41);
-            this.size8_1.Name = "size8_1";
-            this.size8_1.Size = new System.Drawing.Size(51, 30);
-            this.size8_1.TabIndex = 36;
-            this.size8_1.TextChanged += new System.EventHandler(this.text_changed_2);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(69, 44);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(319, 25);
-            this.label21.TabIndex = 35;
-            this.label21.Text = "Введите размерность матрицы:";
-            // 
-            // dgv8_1
-            // 
-            this.dgv8_1.AllowUserToAddRows = false;
-            this.dgv8_1.AllowUserToDeleteRows = false;
-            this.dgv8_1.AllowUserToResizeColumns = false;
-            this.dgv8_1.AllowUserToResizeRows = false;
-            this.dgv8_1.ColumnHeadersHeight = 29;
-            this.dgv8_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv8_1.ColumnHeadersVisible = false;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv8_1.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dgv8_1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
-            this.dgv8_1.Location = new System.Drawing.Point(74, 232);
-            this.dgv8_1.MultiSelect = false;
-            this.dgv8_1.Name = "dgv8_1";
-            this.dgv8_1.RowHeadersVisible = false;
-            this.dgv8_1.RowHeadersWidth = 51;
-            this.dgv8_1.RowTemplate.Height = 24;
-            this.dgv8_1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgv8_1.Size = new System.Drawing.Size(326, 274);
-            this.dgv8_1.TabIndex = 33;
-            this.dgv8_1.SelectionChanged += new System.EventHandler(this.dgv1_1_SelectionChanged);
+            this.size7_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.size7_3.Location = new System.Drawing.Point(468, 351);
+            this.size7_3.Name = "size7_3";
+            this.size7_3.Size = new System.Drawing.Size(51, 30);
+            this.size7_3.TabIndex = 35;
             // 
             // label26
             // 
@@ -1429,19 +1322,284 @@ namespace Matrix
             this.dgv7_1.TabIndex = 24;
             this.dgv7_1.SelectionChanged += new System.EventHandler(this.dgv1_1_SelectionChanged);
             // 
-            // size7_3
+            // tabPage8
             // 
-            this.size7_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.size7_3.Location = new System.Drawing.Point(468, 351);
-            this.size7_3.Name = "size7_3";
-            this.size7_3.Size = new System.Drawing.Size(51, 30);
-            this.size7_3.TabIndex = 35;
+            this.tabPage8.Controls.Add(this.label22);
+            this.tabPage8.Controls.Add(this.opredelitelButton);
+            this.tabPage8.Controls.Add(this.label19);
+            this.tabPage8.Controls.Add(this.sizeButton8);
+            this.tabPage8.Controls.Add(this.label20);
+            this.tabPage8.Controls.Add(this.size8_2);
+            this.tabPage8.Controls.Add(this.size8_1);
+            this.tabPage8.Controls.Add(this.label21);
+            this.tabPage8.Controls.Add(this.dgv8_1);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1316, 573);
+            this.tabPage8.TabIndex = 8;
+            this.tabPage8.Text = "Определитель";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.Location = new System.Drawing.Point(497, 355);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(31, 29);
+            this.label22.TabIndex = 43;
+            this.label22.Text = "...";
+            // 
+            // opredelitelButton
+            // 
+            this.opredelitelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.opredelitelButton.Location = new System.Drawing.Point(90, 153);
+            this.opredelitelButton.Name = "opredelitelButton";
+            this.opredelitelButton.Size = new System.Drawing.Size(287, 43);
+            this.opredelitelButton.TabIndex = 42;
+            this.opredelitelButton.Text = "Вычислить определитель";
+            this.opredelitelButton.UseVisualStyleBackColor = true;
+            this.opredelitelButton.Click += new System.EventHandler(this.opredelitelButton_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(435, 347);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(42, 44);
+            this.label19.TabIndex = 41;
+            this.label19.Text = "=";
+            // 
+            // sizeButton8
+            // 
+            this.sizeButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sizeButton8.Location = new System.Drawing.Point(598, 38);
+            this.sizeButton8.Name = "sizeButton8";
+            this.sizeButton8.Size = new System.Drawing.Size(300, 41);
+            this.sizeButton8.TabIndex = 40;
+            this.sizeButton8.Text = "Задать размер";
+            this.sizeButton8.UseVisualStyleBackColor = true;
+            this.sizeButton8.Click += new System.EventHandler(this.sizeButton8_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(470, 44);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(26, 25);
+            this.label20.TabIndex = 38;
+            this.label20.Text = "X";
+            // 
+            // size8_2
+            // 
+            this.size8_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.size8_2.Location = new System.Drawing.Point(502, 41);
+            this.size8_2.Name = "size8_2";
+            this.size8_2.ReadOnly = true;
+            this.size8_2.Size = new System.Drawing.Size(51, 30);
+            this.size8_2.TabIndex = 37;
+            // 
+            // size8_1
+            // 
+            this.size8_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.size8_1.Location = new System.Drawing.Point(413, 41);
+            this.size8_1.Name = "size8_1";
+            this.size8_1.Size = new System.Drawing.Size(51, 30);
+            this.size8_1.TabIndex = 36;
+            this.size8_1.TextChanged += new System.EventHandler(this.text_changed_2);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(69, 44);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(319, 25);
+            this.label21.TabIndex = 35;
+            this.label21.Text = "Введите размерность матрицы:";
+            // 
+            // dgv8_1
+            // 
+            this.dgv8_1.AllowUserToAddRows = false;
+            this.dgv8_1.AllowUserToDeleteRows = false;
+            this.dgv8_1.AllowUserToResizeColumns = false;
+            this.dgv8_1.AllowUserToResizeRows = false;
+            this.dgv8_1.ColumnHeadersHeight = 29;
+            this.dgv8_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv8_1.ColumnHeadersVisible = false;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv8_1.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dgv8_1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.dgv8_1.Location = new System.Drawing.Point(74, 232);
+            this.dgv8_1.MultiSelect = false;
+            this.dgv8_1.Name = "dgv8_1";
+            this.dgv8_1.RowHeadersVisible = false;
+            this.dgv8_1.RowHeadersWidth = 51;
+            this.dgv8_1.RowTemplate.Height = 24;
+            this.dgv8_1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv8_1.Size = new System.Drawing.Size(326, 274);
+            this.dgv8_1.TabIndex = 33;
+            this.dgv8_1.SelectionChanged += new System.EventHandler(this.dgv1_1_SelectionChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.loadButton);
+            this.panel1.Controls.Add(this.saveButton);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(9, 9);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.MaximumSize = new System.Drawing.Size(167, 94);
+            this.panel1.MinimumSize = new System.Drawing.Size(167, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(167, 31);
+            this.panel1.TabIndex = 2;
+            // 
+            // loadButton
+            // 
+            this.loadButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.loadButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.loadButton.FlatAppearance.BorderSize = 0;
+            this.loadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadButton.Location = new System.Drawing.Point(0, 62);
+            this.loadButton.Margin = new System.Windows.Forms.Padding(0);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(167, 31);
+            this.loadButton.TabIndex = 2;
+            this.loadButton.Text = "Загрузить";
+            this.loadButton.UseVisualStyleBackColor = false;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.saveButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Location = new System.Drawing.Point(0, 31);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(0);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(167, 31);
+            this.saveButton.TabIndex = 1;
+            this.saveButton.Text = "Сохранить";
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 31);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Файл";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Location = new System.Drawing.Point(176, 9);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.MaximumSize = new System.Drawing.Size(167, 94);
+            this.panel2.MinimumSize = new System.Drawing.Size(167, 31);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(167, 31);
+            this.panel2.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(167, 31);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "О программе";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.exitButton);
+            this.panel3.Controls.Add(this.journalButton);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Location = new System.Drawing.Point(343, 9);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.MaximumSize = new System.Drawing.Size(230, 94);
+            this.panel3.MinimumSize = new System.Drawing.Size(230, 31);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(230, 31);
+            this.panel3.TabIndex = 4;
+            // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.exitButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Location = new System.Drawing.Point(0, 62);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(0);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(230, 31);
+            this.exitButton.TabIndex = 2;
+            this.exitButton.Text = "Выйти из аккаунта";
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // journalButton
+            // 
+            this.journalButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.journalButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.journalButton.FlatAppearance.BorderSize = 0;
+            this.journalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.journalButton.Location = new System.Drawing.Point(0, 31);
+            this.journalButton.Margin = new System.Windows.Forms.Padding(0);
+            this.journalButton.Name = "journalButton";
+            this.journalButton.Size = new System.Drawing.Size(230, 31);
+            this.journalButton.TabIndex = 1;
+            this.journalButton.Text = "Журнал действий";
+            this.journalButton.UseVisualStyleBackColor = false;
+            this.journalButton.Click += new System.EventHandler(this.journalButton_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(230, 31);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "Аккаунт";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 672);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1473,11 +1631,14 @@ namespace Matrix
             ((System.ComponentModel.ISupportInitialize)(this.dgv6_1)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv7_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv7_1)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv8_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv7_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv7_1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1573,6 +1734,16 @@ namespace Matrix
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.DataGridView dgv7_3;
         private System.Windows.Forms.DataGridView dgv7_1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button loadButton;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button journalButton;
+        private System.Windows.Forms.Button button3;
     }
 }
 
